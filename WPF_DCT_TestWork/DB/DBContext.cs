@@ -13,7 +13,7 @@ namespace WPF_DCT_TestWork.DB
         public DbSet<AssetTransaction> AssetTransactions { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=.\\localhost;Database=DCT_TestWork_base;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=DCT_TestWork_base;Integrated Security=True");
             base.OnConfiguring(optionsBuilder);
         }
     }
