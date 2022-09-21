@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPF_DCT_TestWork.DB;
+using WPF_DCT_TestWork.Model;
+using WPF_DCT_TestWork.Services;
 
 namespace WPF_DCT_TestWork
 {
@@ -22,6 +25,9 @@ namespace WPF_DCT_TestWork
     {
         public MainWindow()
         {
+            IDataService<User> userService = new GenericDataService<User>(new DBContextFactory());
+            userService.Create(new User { UserName = "Test" }).Wait();
+            ListBoxUsers.Items.Add(userService.GetAll());
             InitializeComponent();
         }
     }
