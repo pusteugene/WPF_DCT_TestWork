@@ -10,7 +10,7 @@ using WPF_DCT_TestWork.DB;
 namespace WPF_DCT_TestWork.Migrations
 {
     [DbContext(typeof(DBContext))]
-    [Migration("20220919002338_initial")]
+    [Migration("20220921085228_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -54,6 +54,9 @@ namespace WPF_DCT_TestWork.Migrations
                     b.Property<int>("Amount")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("DateProcessed")
+                        .HasColumnType("datetime2");
+
                     b.Property<bool>("IsPurchase")
                         .HasColumnType("bit");
 
@@ -71,7 +74,13 @@ namespace WPF_DCT_TestWork.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<DateTime>("DatedJoined")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserName")

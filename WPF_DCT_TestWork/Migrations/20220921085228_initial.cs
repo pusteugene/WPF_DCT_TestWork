@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace WPF_DCT_TestWork.Migrations
 {
@@ -13,7 +14,9 @@ namespace WPF_DCT_TestWork.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Email = table.Column<string>(nullable: true),
-                    UserName = table.Column<string>(nullable: true)
+                    UserName = table.Column<string>(nullable: true),
+                    Password = table.Column<string>(nullable: true),
+                    DatedJoined = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -48,7 +51,8 @@ namespace WPF_DCT_TestWork.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     AccountId = table.Column<int>(nullable: true),
                     IsPurchase = table.Column<bool>(nullable: false),
-                    Amount = table.Column<int>(nullable: false)
+                    Amount = table.Column<int>(nullable: false),
+                    DateProcessed = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
