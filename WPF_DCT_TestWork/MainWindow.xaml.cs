@@ -25,9 +25,6 @@ namespace WPF_DCT_TestWork
     {
         public MainWindow()
         {
-            IDataService<User> userService = new GenericDataService<User>(new DBContextFactory());
-            userService.Create(new User { UserName = "Test" }).Wait();
-            ListBoxUsers.Items.Add(userService.GetAll());
             InitializeComponent();
         }
     }
