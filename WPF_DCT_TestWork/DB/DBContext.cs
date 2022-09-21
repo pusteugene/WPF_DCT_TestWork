@@ -11,10 +11,6 @@ namespace WPF_DCT_TestWork.DB
         public DbSet<User> Users { get; set; }
         public DbSet<Account> Accounts { get; set; }
         public DbSet<AssetTransaction> AssetTransactions { get; set; }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=DCT_TestWork_base;Integrated Security=True");
-            base.OnConfiguring(optionsBuilder);
-        }
+        public DBContext(DbContextOptions options) : base(options) { }
     }
 }
