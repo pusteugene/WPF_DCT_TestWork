@@ -4,13 +4,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_DCT_TestWork"
+        xmlns:controls="clr-namespace:WPF_DCT_TestWork.Controls"
+        xmlns:navi="clr-namespace:WPF_DCT_TestWork.State.Navigators"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="409*"/>
-            <ColumnDefinition Width="391*"/>
-        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <controls:NavigationBar Grid.Row="0" DataContext="{Binding Navigator}"/>
+        <ContentControl Grid.Row="1" Content="{Binding Navigator.CurrentViewModel}"/>
+
 
     </Grid>
 </Window>

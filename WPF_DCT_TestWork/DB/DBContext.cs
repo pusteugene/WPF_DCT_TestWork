@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using WPF_DCT_TestWork.Model;
+using WPF_DCT_TestWork.Models;
 
 namespace WPF_DCT_TestWork.DB
 {
